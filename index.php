@@ -28,13 +28,13 @@
                 <tbody>
                     <?php  foreach($contacts as $contato):?>
                         <tr>
-                            <td scope="row"><?=  $contato["id"]  ?></td>
+                            <td scope="row" class="col-id"><?=  $contato["id"]  ?></td>
                             <td scope="row"><?=  $contato["name"]  ?></td>
                             <td scope="row"><?=  $contato["phone"]  ?></td>
                             <td class="actions">
                                 <a href="#"><i class="fas fa-eye check-icon"></i></a>
                                 <a href="#"><i class="far fa-edit edit-icon"></i></a>
-                                <button type="submit"><i class="fas fa-times delete-icon"></i></button>
+                                <button type="submit" class="delete-btn"><i class="fas fa-times delete-icon"></i></button>
                             </td> 
                         </tr>
                     <?php endforeach ?>    
