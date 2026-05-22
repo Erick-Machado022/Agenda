@@ -52,7 +52,7 @@
 }
 
 #empty-list-text{
-    align-items: center;
+    text-align: center;
 }
 
 #msg{
@@ -64,6 +64,34 @@
     max-width: 500px;
     margin: 0 auto;
     margin-top: 30px;
+}
+
+/*SHOW*/
+
+#view-contact-container{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+#back-link-container{
+    display: block;
+    max-width: 500px;
+    margin: 30px auto 0;
+}
+
+#back-link{
+    border: 1px solid #007bff;
+    color: #007bff;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+#back-link:hover{
+    text-decoration: none;
 }
 
 

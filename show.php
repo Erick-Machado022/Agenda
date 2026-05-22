@@ -9,7 +9,10 @@
 
     }
 ?>
-<div class="container" id="contact-container">
+
+
+<div class="container" id="view-contact-container">
+    <?php include_once("templates/back-btn.html"); ?>
     <h1 id="main-title"><?= $contato["name"] ?></h1>
     <p class="bold">Telefone</p>
     <p><?= $contato["phone"] ?></p>
