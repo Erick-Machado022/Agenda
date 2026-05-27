@@ -11,28 +11,62 @@
         //Criar contato
 
         if($data["type"] == "create"){
-             
-            $nome = $data["name"];
-            $phone = $data["phone"];
-            $observations = $data["observations"];
+                
+                $nome = $data["name"];
+                $phone = $data["phone"];
+                $observations = $data["observations"];
 
-            $query = "INSERT INTO contacts(name, phone, observations) VALUES(:nome, :phone, :observations)";
+                $query = "INSERT INTO contacts(name, phone, observations) VALUES(:nome, :phone, :observations)";
 
-            $stmt = $conn->prepare($query);
-            $stmt->bindParam(":nome", $nome);
-            $stmt->bindParam(":phone", $phone);
-            $stmt->bindParam(":observations", $observations);
+                $stmt = $conn->prepare($query);
+                $stmt->bindParam(":nome", $nome);
+                $stmt->bindParam(":phone", $phone);
+                $stmt->bindParam(":observations", $observations);
 
-            try{
+                try{
 
-                $stmt->execute();
-                $_SESSION["msg"] = "Contato criado com sucesso!";
+                    $stmt->execute();
+                    $_SESSION["msg"] = "Contato criado com sucesso!";
 
-            }catch(PDOException $e) {
-                //Erro de comixão
-                $error = $e->getMessage();
-                echo "ERRO: $error";
+                }catch(PDOException $e) {
+                    //Erro de comixão
+                    $error = $e->getMessage();
+                    echo "ERRO: $error";
+                }
+
+            
             }
+            
+            else if($data["type"] == "edit"){
+
+                $nome = $data["name"];
+                $phone = $data["phone"];
+                $observations = $data["observations"];
+                $id = $data["id"];
+
+                $query = "UPDATE contacts 
+                          SET name = :name, phone = :phone, observations = :observations 
+                          WHERE id = :id";
+                
+
+
+                $stmt = $conn->prepare($query);
+
+                $stmt->bindParam(":name", $nome);
+                $stmt->bindParam(":phone", $phone);
+                $stmt->bindParam(":observations", $observations);
+                $stmt->bindParam(":id", $id);
+
+                try{
+
+                    $stmt->execute();
+                    $_SESSION["msg"] = "Contato atualizado com sucesso!";
+
+                }catch(PDOException $e) {
+                    //Erro de comixão
+                    $error = $e->getMessage();
+                    echo "ERRO: $error";
+                }
 
 
         }

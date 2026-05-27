@@ -13,11 +13,11 @@
 
 <div class="container" id="view-contact-container">
     <?php include_once("templates/back-btn.html"); ?>
-    <h1 id="main-title"><?= $contato["name"] ?></h1>
+    <h1 id="main-title"><?= $contact["name"] ?></h1>
     <p class="bold">Telefone</p>
-    <p><?= $contato["phone"] ?></p>
+    <p><?= $contact["phone"] ?></p>
     <p class="bold">Observações</p>
-    <p><?= $contato["observations"] ?></p>
+    <p><?= $contact["observations"] ?></p>
 </div>
 <?php
     include_once("templates/footer.php");
