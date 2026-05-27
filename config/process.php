@@ -57,7 +57,7 @@
             $stmt = $conn->prepare($query);
             $stmt->bindParam(":id", $id);
             $stmt->execute();
-            $contato = $stmt->fetch();
+            $contact = $stmt->fetch();
         }else{
             //Query para todos os contatos
             $query = "SELECT * FROM contacts";
