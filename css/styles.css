@@ -40,8 +40,12 @@
     color: #007bff
 }
 
+.delete-form{
+    display: inline-block;
+}
+
 .delete-icon{
-    color: #bd2130;;
+    color: #bd2130;
     
 }
 
