@@ -67,9 +67,7 @@
                     $error = $e->getMessage();
                     echo "ERRO: $error";
                 }
-
-
-        }
+            }
 
 
         header("Location: " . $BASE_URL . "../index.php");
